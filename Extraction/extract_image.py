@@ -23,12 +23,12 @@ class ImageCreator():
             for topic, msg, t in bag.read_messages():
                 if topic == image_topic:
                     try:
-                        # cv_image = self.bridge.imgmsg_to_cv2(msg,"bgr8") # For /image_raw
+                        # cv_image = self.bridge.imgmsg_to_cv2(msg,"bgr8") # *For /image_raw
                         cv_image = self.bridge.compressed_imgmsg_to_cv2(
-                            msg)  # For /image_raw/compressed
+                            msg)  # *For /image_raw/compressed
                     except CvBridgeError as e:
                         print e
-                    # Timestamps MUST HAVE 6 decimal places.
+                    # !Timestamps MUST HAVE 6 decimal places.
                     timestr = "%.6f" % msg.header.stamp.to_sec()
                     image_name = timestr + ".jpg"
                     cv2.imwrite(output_path + image_name, cv_image)
