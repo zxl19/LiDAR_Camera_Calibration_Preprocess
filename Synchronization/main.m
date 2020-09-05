@@ -20,11 +20,11 @@ tol = 0.001;
 fileID = fopen("filename_sync.txt",'w+');
 for i = 1 : m
     fprintf("--------------------%d--------------------\n",i);
-    fprintf("Camera timestamp: %f\n",timestamp_img_sync(i, 1));
-    fprintf("Lidar  timestamp: %f\n",timestamp_pcd_sync(i, 1));
+    fprintf("Camera timestamp: %.6f\n",timestamp_img_sync(i, 1));
+    fprintf("Lidar  timestamp: %.6f\n",timestamp_pcd_sync(i, 1));
     fprintf(fileID, "--------------------%d--------------------\n",i);
-    fprintf(fileID, "Camera timestamp: %f\n",timestamp_img_sync(i, 1));
-    fprintf(fileID, "Lidar  timestamp: %f\n",timestamp_pcd_sync(i, 1));
+    fprintf(fileID, "Camera timestamp: %.6f\n",timestamp_img_sync(i, 1));
+    fprintf(fileID, "Lidar  timestamp: %.6f\n",timestamp_pcd_sync(i, 1));
 end
 fclose(fileID);
 %% Copy Synchronized Files
