@@ -24,6 +24,12 @@ python extract_images.py
 
 Run `main.m` to synchronize timestamps.
 
+## Extrinsic Calibration
+
+After extracting and synchronizing data from the rosbag, use `CameraCalibrator` app in MATLAB to calculate the intrinsic of the camera. Later, use the method mentioned in the following paper to calibrate the extrinsic between LiDAR and camera.
+
+[1]. Xie S, Yang D, Jiang K, et al. Pixels and 3-D Points Alignment Method for the Fusion of Camera and LiDAR Data[J]. IEEE Transactions on Instrumentation and Measurement, 2019, 68(10): 3661-3676. [[LINK](https://ieeexplore.ieee.org/document/8565990)]
+
 ## Reference
 
 1. [ROS Answers](https://answers.ros.org/question/289937/subscribing-to-compressed-images-from-rosbag/)
