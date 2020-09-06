@@ -3,9 +3,9 @@ clear
 clc
 format long
 %% Determine Folder Path
-path = "../../data/";
-path_img = strcat(path, "img/*.jpg");
-path_pcd = strcat(path, "pcd/*.pcd");
+path = "../../data/"; % Change folder path here.
+path_img = strcat(path, "img/*.jpg"); % Place images      in /img folder
+path_pcd = strcat(path, "pcd/*.pcd"); % Place pointclouds in /pcd folder
 %% List Folder Contents
 listing_img = dir(path_img);
 listing_pcd = dir(path_pcd);
@@ -13,7 +13,7 @@ listing_pcd = dir(path_pcd);
 timestamp_img = readFilename(listing_img, ".jpg");
 timestamp_pcd = readFilename(listing_pcd, ".pcd");
 %% Synchronize Timestamps
-tol = 0.001;
+tol = 0.001; % Change tolerance here.
 [timestamp_img_sync, timestamp_pcd_sync] = sync2(timestamp_img, timestamp_pcd, tol);
 %% Print Sychronized Timestamp Pairs
 [m, ~] = size(timestamp_img_sync);
