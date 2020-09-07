@@ -3,9 +3,9 @@ clear
 clc
 format long
 %% Determine Folder Path
-path = "../../data/"; % Change folder path here.
-path_img = strcat(path, "img/*.jpg"); % Place images      in /img folder
-path_pcd = strcat(path, "pcd/*.pcd"); % Place pointclouds in /pcd folder
+path = "../../data/"; % Change root folder path here.
+path_img = strcat(path, "img/*.jpg"); % Place images      in ./img folder
+path_pcd = strcat(path, "pcd/*.pcd"); % Place pointclouds in ./pcd folder
 %% List Folder Contents
 listing_img = dir(path_img);
 listing_pcd = dir(path_pcd);
