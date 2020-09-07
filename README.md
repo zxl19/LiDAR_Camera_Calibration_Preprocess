@@ -14,15 +14,42 @@ rosrun pcl_ros bag_to_pcd <bag_path> <pointcloud_topic> <folder_path>
 
 ### Image
 
-Use `extract_image.py` to extract images from a rosbag:
+1. Change the following lines in `extract_image.py`:
 
-```shell
-python extract_images.py
-```
+    ```python
+    # Change image destination folder path here.
+    output_path = '<your image destination folder path>'
+    # Change rosbag path here.
+    bag_path = '<your roabag path>'
+    # Change image topic here.
+    image_topic = '<your image topic>'
+    ```
+
+2. Choose one of the following two lines in `extract_image.py` regarding the message type you use:
+
+    ```python
+    # cv_image = self.bridge.imgmsg_to_cv2(msg,"bgr8")  # *For /image_raw
+    cv_image = self.bridge.compressed_imgmsg_to_cv2(msg) # *For /image_raw/compressed
+    ```
+
+3. Use `extract_image.py` to extract images from a rosbag:
+
+    ```shell
+    python extract_images.py
+    ```
 
 ## Data Synchronization
 
-Run `main.m` to synchronize timestamps.
+1. Change the following lines in `main.m`:
+
+    ```matlab
+    %% Determine Folder Path
+    path = "<your root folder path>"; % Change folder path here.
+    path_img = strcat(path, "img/*.jpg"); % Place images      in ./img folder
+    path_pcd = strcat(path, "pcd/*.pcd"); % Place pointclouds in ./pcd folder
+    ```
+
+2. Run `main.m` to synchronize timestamps.
 
 ## Extrinsic Calibration
 
