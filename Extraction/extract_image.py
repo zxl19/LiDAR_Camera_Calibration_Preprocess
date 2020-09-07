@@ -23,7 +23,7 @@ class ImageCreator():
             for topic, msg, t in bag.read_messages():
                 if topic == image_topic:
                     try:
-                        # cv_image = self.bridge.imgmsg_to_cv2(msg,"bgr8") # *For /image_raw
+                        # cv_image = self.bridge.imgmsg_to_cv2(msg,"bgr8")  # *For /image_raw
                         cv_image = self.bridge.compressed_imgmsg_to_cv2(
                             msg)  # *For /image_raw/compressed
                     except CvBridgeError as e:
