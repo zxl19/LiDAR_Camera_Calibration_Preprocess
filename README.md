@@ -61,6 +61,7 @@ After extracting and synchronizing data from the rosbag, use `CameraCalibrator` 
 ## TODO
 
 - [ ] Use Python to extract both pointcloud and image.
+- [ ] Manually select images and corresponding pointcloud.
 - [ ] Release and maintain code for extrinsic calibration (All credit goes to the authors of the paper above).
 
 ## Reference
