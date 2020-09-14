@@ -50,12 +50,18 @@ rosrun pcl_ros bag_to_pcd <bag_path> <pointcloud_topic> <folder_path>
     ```
 
 2. Run `main.m` to synchronize timestamps.
+3. Check synchronized data in `./img_sync/` and `./pcd_sync/` respectively.
 
 ## Extrinsic Calibration
 
 After extracting and synchronizing data from the rosbag, use `CameraCalibrator` app in MATLAB to calculate the intrinsic of the camera. Later, use the method mentioned in the following paper to calibrate the extrinsic between LiDAR and camera.
 
 [1]. Xie S, Yang D, Jiang K, et al. Pixels and 3-D Points Alignment Method for the Fusion of Camera and LiDAR Data[J]. IEEE Transactions on Instrumentation and Measurement, 2019, 68(10): 3661-3676. [[LINK](https://ieeexplore.ieee.org/document/8565990)]
+
+## TODO
+
+- [ ] Use Python to extract both pointcloud and image.
+- [ ] Release and maintain code for extrinsic calibration (All credit goes to the authors of the paper above).
 
 ## Reference
 
