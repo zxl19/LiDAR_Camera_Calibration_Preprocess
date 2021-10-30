@@ -2,6 +2,12 @@
 
 This repository contains MATLAB and Python tools to extract and synchronize pointclouds and images from a rosbag for extrinsic calibration.
 
+## Prerequisites
+
+1. ROS (Tested on Kinetic and Melodic)
+2. Python 2.X
+3. MATLAB
+
 ## 1. Data Extraction
 
 ### 1.1 Pointcloud
@@ -14,25 +20,20 @@ rosrun pcl_ros bag_to_pcd <bag_path> <pointcloud_topic> <folder_path>
 
 ### 1.2 Image
 
-1. Change the following lines in `extract_image.py`:
+1. Change the following lines in `config.ini`:
 
-    ```python
+    ```ini
+    # Parameter Setup
+    [DEFAULT]
     # Change image destination folder path here.
-    output_path = '<your image destination folder path>'
+    output_path = <your image destination folder path>
     # Change rosbag path here.
-    bag_path = '<your roabag path>'
+    bag_path = <your roabag path>
     # Change image topic here.
-    image_topic = '<your image topic>'
+    image_topic = <your image topic>
     ```
 
-2. Choose one of the following two lines in `extract_image.py` regarding the message type you use:
-
-    ```python
-    # cv_image = self.bridge.imgmsg_to_cv2(msg,"bgr8")  # *For /image_raw
-    cv_image = self.bridge.compressed_imgmsg_to_cv2(msg) # *For /image_raw/compressed
-    ```
-
-3. Use `extract_image.py` to extract images from a rosbag:
+2. Use `extract_image.py` to extract images from a rosbag (Python 2):
 
     ```shell
     python extract_image.py
@@ -60,6 +61,9 @@ After extracting and synchronizing data from the rosbag, use `CameraCalibrator` 
 
 ## 4. TODO
 
+- [x] Read config file to get parameters.
+- [x] Check and create destination folder.
+- [x] Add progressbar.
 - [ ] Use Python to extract both pointcloud and image.
 - [ ] Manually select images and corresponding pointcloud.
 - [ ] Release and maintain code for extrinsic calibration (All credit goes to the authors of the paper above).
@@ -67,4 +71,9 @@ After extracting and synchronizing data from the rosbag, use `CameraCalibrator` 
 ## 5. Reference
 
 1. [ROS Answers](https://answers.ros.org/question/289937/subscribing-to-compressed-images-from-rosbag/)
-2. [CSDN Blog](https://blog.csdn.net/yinxingtianxia/java/article/details/80266849)
+2. [CSDN Blog](https://blog.csdn.net/loveSIYU/article/details/113830289)
+3. [CSDN Blog](https://blog.csdn.net/memoryd/article/details/105174348)
+4. [CSDN Blog](https://blog.csdn.net/qq_22059843/article/details/103018216)
+5. [CSDN Blog](https://blog.csdn.net/yourgreatfather/article/details/87783906)
+6. [Stack Overflow](https://stackoverflow.com/questions/39772424/how-to-effeciently-convert-ros-pointcloud2-to-pcl-point-cloud-and-visualize-it-i)
+7. [Stack Overflow](https://stackoverflow.com/questions/59794926/saving-pointcloud-from-rosbag)
