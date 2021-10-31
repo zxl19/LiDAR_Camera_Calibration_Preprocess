@@ -4,9 +4,9 @@ This repository contains MATLAB and Python tools to extract and synchronize poin
 
 ## Prerequisites
 
-1. ROS (Tested on Kinetic and Melodic)
-2. Python 2.X
-3. MATLAB
+1. ROS (tested on Kinetic and Melodic)
+2. Python 2.X (tested on 2.7.17)
+3. MATLAB (tested on 2020a)
 
 ## 1. Data Extraction
 
@@ -23,17 +23,17 @@ rosrun pcl_ros bag_to_pcd <bag_path> <pointcloud_topic> <folder_path>
 1. Change the following lines in `config.ini`:
 
     ```ini
-    # Parameter Setup
+    ; Parameter Setup
     [DEFAULT]
-    # Change image destination folder path here.
+    ; Change image destination folder path here.
     output_path = <your image destination folder path>
-    # Change rosbag path here.
+    ; Change rosbag path here.
     bag_path = <your roabag path>
-    # Change image topic here.
+    ; Change image topic here.
     image_topic = <your image topic>
     ```
 
-2. Use `extract_image.py` to extract images from a rosbag (Python 2):
+2. Use `extract_image.py` to extract images from a rosbag (Python 2.X):
 
     ```shell
     python extract_image.py
