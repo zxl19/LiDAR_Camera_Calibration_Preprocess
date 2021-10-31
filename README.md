@@ -12,7 +12,7 @@ This repository contains MATLAB and Python tools to extract and synchronize poin
 
 ### 2.1 Point Cloud
 
-Use `pcl_ros` to extract point clouds from a rosbag:
+Use [pcl_ros](http://wiki.ros.org/pcl_ros) to extract point clouds from a rosbag:
 
 ```shell
 rosrun pcl_ros bag_to_pcd <input_file.bag> <topic> <output_directory>
@@ -71,10 +71,11 @@ After extracting and synchronizing data from the rosbag, use `CameraCalibrator` 
 
 ## 6. Reference
 
-1. [ROS Answers](https://answers.ros.org/question/289937/subscribing-to-compressed-images-from-rosbag/)
-2. [CSDN Blog](https://blog.csdn.net/loveSIYU/article/details/113830289)
-3. [CSDN Blog](https://blog.csdn.net/memoryd/article/details/105174348)
-4. [CSDN Blog](https://blog.csdn.net/qq_22059843/article/details/103018216)
-5. [CSDN Blog](https://blog.csdn.net/yourgreatfather/article/details/87783906)
-6. [Stack Overflow](https://stackoverflow.com/questions/39772424/how-to-effeciently-convert-ros-pointcloud2-to-pcl-point-cloud-and-visualize-it-i)
-7. [Stack Overflow](https://stackoverflow.com/questions/59794926/saving-pointcloud-from-rosbag)
+1. [pcl_ros](http://wiki.ros.org/pcl_ros)
+2. [ROS Answers](https://answers.ros.org/question/289937/subscribing-to-compressed-images-from-rosbag/)
+3. [CSDN Blog](https://blog.csdn.net/loveSIYU/article/details/113830289)
+4. [CSDN Blog](https://blog.csdn.net/memoryd/article/details/105174348)
+5. [CSDN Blog](https://blog.csdn.net/qq_22059843/article/details/103018216)
+6. [CSDN Blog](https://blog.csdn.net/yourgreatfather/article/details/87783906)
+7. [Stack Overflow](https://stackoverflow.com/questions/39772424/how-to-effeciently-convert-ros-pointcloud2-to-pcl-point-cloud-and-visualize-it-i)
+8. [Stack Overflow](https://stackoverflow.com/questions/59794926/saving-pointcloud-from-rosbag)
