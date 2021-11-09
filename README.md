@@ -25,18 +25,28 @@ rosrun pcl_ros bag_to_pcd <input_file.bag> <topic> <output_directory>
     ```ini
     ; Parameter Setup
     [DEFAULT]
-    ; Change image destination folder path here.
-    output_path = <your image destination folder path>
-    ; Change rosbag path here.
-    bag_path = <your roabag path>
-    ; Change image topic here.
-    image_topic = <your image topic>
+    ; ; Change rosbag path here.
+    ; bag_path = <your roabag path>
+    ; ; Change image topic here.
+    ; image_topic = <your image topic>
+    ; ; Change image destination folder path here.
+    ; image_path = <your image destination folder path>
+    ; ; Change cropped image destination folder path here.
+    ; cropped_path = <your cropped image destination folder path>
+    ; ; Change cropped resolution from bottom here.
+    ; cropped_resolution = <your cropped resolution from bottom>
     ```
 
 2. Use `extract_image.py` to extract images from a rosbag (Python 2.X):
 
     ```shell
     python extract_image.py
+    ```
+
+3. Use `crop_image_bottom.py` to crop images from bottom (Python 2.X):
+
+    ```shell
+    python crop_image_bottom.py
     ```
 
 ## 3. Data Synchronization
