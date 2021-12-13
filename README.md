@@ -6,7 +6,7 @@ This repository contains MATLAB and Python tools to extract and synchronize poin
 
 1. ROS (tested on Kinetic and Melodic)
 2. Python 2.X (tested on 2.7.17)
-3. MATLAB (tested on 2020a)
+3. MATLAB (tested on 2020a and 2021b)
 
 ## 2. Data Extraction
 
