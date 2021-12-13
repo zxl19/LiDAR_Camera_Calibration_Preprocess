@@ -1,0 +1,6 @@
+/img_sync
+/pcd_sync
+
+*.jpg
+*.pcd
+*.txt

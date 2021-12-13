@@ -42,8 +42,8 @@ class ImageCreator():
                             cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")  # *For sensor_msgs/Image
                         except CvBridgeError as e:
                             print e
-                    # !Timestamps MUST HAVE 6 decimal places.
-                    timestr = "%.6f" % (msg.header.stamp.to_sec())
+                    # !Timestamps MUST HAVE 9 decimal places.
+                    timestr = "%.9f" % (msg.header.stamp.to_sec())
                     image_name = timestr + ".jpg"
                     cv2.imwrite(image_path + image_name, cv_image)
                     percent = (t.to_sec() - start_time) / duration

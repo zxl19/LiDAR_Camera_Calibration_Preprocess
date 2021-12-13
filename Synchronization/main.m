@@ -19,12 +19,12 @@ tol = 0.001; % Change tolerance here.
 [m, ~] = size(timestamp_img_sync);
 fileID = fopen("filename_sync.txt",'w+');
 for i = 1 : m
-    fprintf("--------------------%d--------------------\n",i);
-    fprintf("Camera timestamp: %.6f\n",timestamp_img_sync(i, 1));
-    fprintf("Lidar  timestamp: %.6f\n",timestamp_pcd_sync(i, 1));
-    fprintf(fileID, "--------------------%d--------------------\n",i);
-    fprintf(fileID, "Camera timestamp: %.6f\n",timestamp_img_sync(i, 1));
-    fprintf(fileID, "Lidar  timestamp: %.6f\n",timestamp_pcd_sync(i, 1));
+    fprintf("--------------------%06d--------------------\n",i);
+    fprintf("Camera timestamp: %.9f\n",timestamp_img_sync(i, 1));
+    fprintf("Lidar  timestamp: %.9f\n",timestamp_pcd_sync(i, 1));
+    fprintf(fileID, "--------------------%06d--------------------\n",i);
+    fprintf(fileID, "Camera timestamp: %.9f\n",timestamp_img_sync(i, 1));
+    fprintf(fileID, "Lidar  timestamp: %.9f\n",timestamp_pcd_sync(i, 1));
 end
 fclose(fileID);
 %% Copy Synchronized Files
